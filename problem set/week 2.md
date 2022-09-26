@@ -40,17 +40,90 @@ Our goal is to get the MSE solution of $\boldsymbol{w}$ and $w_0$. Tasks:
    \end{align}
    $$
 
-2. We know that $w_0=w_0(\boldsymbol w)$, we have
+2. We know that $w_0=w_0(\boldsymbol w)$, and we have
+
    $$
-   \frac{\partial E}{\partial \boldsymbol{w}}=\sum_{i=1}^n x_i(w^Tx_i-w_0+t_i)
+   \frac{\partial E}{\partial \boldsymbol{w}}=\sum_{i=1}^n x_i(\boldsymbol{w}^Tx_i+w_0-t_i)
    $$
-   after bringing $w_0^\ast=-\boldsymbol{w}^T\boldsymbol{m}$ back to the definition of $E$.
+
+   and we bring $w_0^\ast=-\boldsymbol{w}^T\boldsymbol{m}$ back to equation:
+
+   $$
+   \frac{\partial E}{\partial \boldsymbol{w}}=\sum_{i=1}^n x_i(\boldsymbol{w}^Tx_i-\boldsymbol{w}^T\boldsymbol{m}-t_i).
+   $$
+
+   Let 
    
+   $$
+   \frac{\partial E}{\partial \boldsymbol{w}^\ast}=0,
+   $$
    
+   we have
 
+   $$
+   \sum_{i=1}^n x_i(\boldsymbol{w}^Tx_i-\boldsymbol{w}^T\boldsymbol{m})=\sum_{i=1}^n x_i t_i.
+   $$
 
+   Firstly, we consider the right hand side of the equation:
 
+   $$
+   \begin{align}
+   \sum_{i=1}^n x_i t_i&=
+   \sum_{x_i\in C_1} x_i t_i+\sum_{x_i\in C_2} x_i t_i \\
+   &=\frac{n}{n_1}\sum_{x_i\in C_1} x_i-\frac{n}{n_2}\sum_{x_i\in C_2} x_i \\
+   &=n(\boldsymbol{m}_1-\boldsymbol{m}_2) \\
+   \end{align}
+   $$
 
+   Next, we consider the left hand side of the equation:
+
+   $$
+   \begin{align}
+   \sum_{i=1}^n x_i(\boldsymbol{w}^Tx_i-\boldsymbol{w}^T\boldsymbol{m})&=\left(\sum_{i=1}^nx_ix_i^T-\sum_{i=1}^nx_i\boldsymbol{m}^T\right)\boldsymbol{w} \\
+   &=\left(\sum_{i=1}^nx_ix_i^T-n\boldsymbol{m}\boldsymbol{m}^T\right)\boldsymbol{w} \\
+   \end{align}
+   $$
+
+   Let $S_b'$ be
+
+   $$
+   \begin{align}
+   S_b'&=\sum_{i=1}^2(\boldsymbol{m}_i-\boldsymbol{m})(\boldsymbol{m}_i-\boldsymbol{m})^T \\
+   &=n_1(\frac{n_2}{n})^2(\boldsymbol{m}_1-\boldsymbol{m_2})(\boldsymbol{m}_1-\boldsymbol{m_2})^T + n_2(\frac{n_1}{n})^2(\boldsymbol{m}_2-\boldsymbol{m_1})(\boldsymbol{m}_2-\boldsymbol{m_1})^T \\
+   &=\frac{n_1 n_2}{n}(\boldsymbol{m}_1-\boldsymbol{m_2})(\boldsymbol{m}_1-\boldsymbol{m_2})^T, \\
+   &=\frac{n_1 n_2}{n}S_b.
+   \end{align}
+   $$
+
+   and
+
+   $$
+   \begin{align}
+   S_b'&=\sum_{i=1}^2(\boldsymbol{m}_i-\boldsymbol{m})(\boldsymbol{m}_i-\boldsymbol{m})^T \\
+   &=n_1(\boldsymbol{m}_1\boldsymbol{m}_1^T-2\boldsymbol{m}_1\boldsymbol{m}^T+\boldsymbol{m}\boldsymbol{m}^T)+n_2(\boldsymbol{m}_2\boldsymbol{m}_2^T-2\boldsymbol{m}_2\boldsymbol{m}^T+\boldsymbol{m}\boldsymbol{m}^T) \\
+   &=\sum_{i=1}^2 n_i\boldsymbol{m}_i \boldsymbol{m}_i^T-n\boldsymbol{m}\boldsymbol{m}^T, \\
+   \end{align}
+   $$
+
+   while $S_w$ equals to
+
+   $$
+   \begin{align}
+   S_w&=\sum_{i=1}^2\sum_{x_i\in C_i}(x_i-\boldsymbol{m}_i)(x_i-\boldsymbol{m}_i)^T \\
+   &=\sum_{i=1}^2\left(\sum_{x_i\in C_i}x_ix_i^T-\sum_{x_i\in C_i}m_ix_i^T\right) \\
+   &=\sum_{i=1}^n x_ix_i^T-\sum_{i=1}^2 n_i\boldsymbol{m}_i \boldsymbol{m}_i^T. \\
+   \end{align}
+   $$
+
+   So we have
+
+   $$
+   \begin{align}
+   (S_w+S_b')\boldsymbol{w}&=(S_w+\frac{n_1 n_2}{n}S_b)\boldsymbol{w} \\
+   &=\left(\sum_{i=1}^nx_ix_i^T-n\boldsymbol{m}\boldsymbol{m}^T\right)\boldsymbol{w} \\
+   &=n(\boldsymbol{m}_1-\boldsymbol{m}_2).
+   \end{align}
+   $$
 
 *Problem 2*. Study the basic formulas of the logistic/sigmoid function.
 

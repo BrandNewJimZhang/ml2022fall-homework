@@ -29,7 +29,7 @@ Our goal is to get the MSE solution of $\boldsymbol{w}$ and $w_0$. Tasks:
    $$
    Let
    $$
-   \frac{\partial E}{\partial w^\ast_0}=0,
+   \left.\frac{\partial E}{\partial w_0}\right|_{w_0^\ast}=0,
    $$
    we have
    $$

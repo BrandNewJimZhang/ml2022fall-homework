@@ -125,6 +125,27 @@ Our goal is to get the MSE solution of $\boldsymbol{w}$ and $w_0$. Tasks:
    \end{align}
    $$
 
+3. Obviously, we have
+
+   $$
+   \begin{align}
+   S_b'\boldsymbol{w}&=\frac{n_1 n_2}{n}S_b\boldsymbol{w} \\
+   &=\frac{n_1 n_2}{n}(\boldsymbol{m}_1-\boldsymbol{m}_2)(\boldsymbol{m}_1-\boldsymbol{m}_2)^T\boldsymbol{w} \\
+   &=\lambda(\boldsymbol{m}_1-\boldsymbol{m}_2) \\
+   \end{align}
+   $$
+
+   and
+
+   $$
+   \begin{align}
+   S_w\boldsymbol{w}&=(n-\lambda)(\boldsymbol{m}_1-\boldsymbol{m}_2) \\
+   \boldsymbol{w}&=(n-\lambda)S_w^{-1}(\boldsymbol{m}_1-\boldsymbol{m}_2) \\
+   \boldsymbol{w}&\propto S_w^{-1}(\boldsymbol{m}_1-\boldsymbol{m}_2).
+   \end{align}
+   $$
+   
+
 *Problem 2*. Study the basic formulas of the logistic/sigmoid function.
 
 1. For

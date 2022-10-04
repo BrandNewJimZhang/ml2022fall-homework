@@ -1,0 +1,5 @@
+jupyter==1.0.0
+matplotlib==3.6.0
+numpy==1.23.3
+scikit-learn==1.1.2
+statsmodels==0.13.2

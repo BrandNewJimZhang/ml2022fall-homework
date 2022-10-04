@@ -16,7 +16,8 @@ The directory contains the following files:
 │   └── train2_icu_label.csv
 ├── homework.ipynb # core code
 ├── roc_curve.png
-└── Solution of Computer Exercise 2.md # report
+├── Solution of Computer Exercise 2.md # report markdown file
+└── Solution of Computer Exercise 2.pdf # report pdf file
 ```
 
 ## How to run

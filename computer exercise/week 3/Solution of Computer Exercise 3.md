@@ -1,4 +1,4 @@
-# Solutions of Computer Exercise 3
+# Solution of Computer Exercise 3
 
 ## Usage of `sklearn.neighbors.KneighborsClassifier()`
 

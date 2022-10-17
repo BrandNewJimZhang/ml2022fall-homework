@@ -48,10 +48,12 @@ I did a 5-fold cross validation on the training set. The accuracy is
 
 | fold | 1     | 2     | 3     | 4     | 5     |
 | ---- | ----- | ----- | ----- | ----- | ----- |
-| acc  | 0.535 | 0.772 | 0.774 | 0.766 | 0.756 |
+| acc  | 0.767 | 0.505 | 0.81 | 0.774 | 0.768 |
 
-And I trained another model of the whole training set and tested it on the test set. The accuracy is 0.526.
+And I trained another model of the whole training set (accuracy 0.839) and tested it on the test set. The accuracy is 0.501.
 
 ### changing learning rate
 
-I changed the learning rate from 0.5 to 0.0005 (0.5, 0.2, 0.1, 0.05, 0.02, 0.01, 0.005).
+I changed the learning rate from 0.05 to 0.0001 (0.05, 0.02, 0.01, 0.005, 0.002, 0.001, 0.0005, 0.0002, 0.0001). The accuracy of the model trained on the whole training set and test set is plotted in the following figure.
+
+![learning rate](lr.png)

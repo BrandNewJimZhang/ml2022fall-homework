@@ -15,12 +15,9 @@ The directory contains the following files:
 │   ├── train2_icu_data.csv
 │   └── train2_icu_label.csv
 ├── homework.ipynb # core code
-├── output.png
-├── selecting-k.png
-├── selecting-leaf-size.png
-├── selecting-p.png
-├── Solution of Computer Exercise 3.md # report markdown file
-└── Solution of Computer Exercise 3.pdf # report pdf file
+├── lr.png 
+├── Solution of Computer Exercise 4.md # report markdown file
+└── Solution of Computer Exercise 4.pdf # report pdf file
 ```
 
 ## How to run
